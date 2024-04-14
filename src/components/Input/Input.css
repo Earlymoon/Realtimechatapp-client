@@ -1,0 +1,40 @@
+.form {
+  display: flex;
+  border-top: 2px solid #d3d3d3;
+}
+
+.input {
+  border: none;
+  border-radius: 0;
+  padding: 5%;
+  width: 80%;
+  font-size: 1.2em;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+.sendButton {
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #7a7a79;
+  padding: 20px;
+  display: inline-block;
+  border: none;
+  font-size: 1.25rem;
+  border-radius: 10px;
+  width: 20%;
+  transition: transform 0.15s ease; /* Add a smooth transition for the transform property */
+}
+
+.sendButton:hover {
+  transform: scale(0.95); /* Scale the button slightly on hover */
+}
+
+.sendButton:active {
+  transform: scale(0.9); /* Scale the button down slightly when clicked */
+}

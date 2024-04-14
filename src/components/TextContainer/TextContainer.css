@@ -1,0 +1,57 @@
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  margin-left: 70px;
+  width: 40%;
+}
+
+.heading {
+  color: #81a82d;
+  font-size: 45px;
+  margin-bottom: 10px;
+}
+
+.description {
+  color: #ffffff;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.onlineUsersHeading {
+  color: #1fe20dde;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.hrwidth {
+  width: 50%;
+  margin-left: 0;
+  height: 3px;
+}
+
+.activeContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.activeItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.userName {
+  margin-left: 10px;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.activeItem img {
+  width: 10px;
+  height: 10px;
+}
+
+@media (min-width: 320px) and (max-width: 1200px) {
+  .textContainer {
+    display: none;
+  }
+}
