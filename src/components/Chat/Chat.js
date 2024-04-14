@@ -16,7 +16,7 @@ const Chat = () => {
   const [users, setUsers] = useState("");
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
-  const ENDPOINT = "localhost:5000";
+  const ENDPOINT = process.env.SERVERPORT || "localhost:5000";
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
 
