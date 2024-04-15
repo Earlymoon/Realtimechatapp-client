@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import queryString from "query-string";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import io from "socket.io-client";
 import "./Chat.css";
 import InfoBar from "../InfoBar/InfoBar";
@@ -24,12 +23,11 @@ const Chat = () => {
     const roomFromUrl = searchParams.get("room") || "";
 
     socket = io(ENDPOINT, {
-      cert: process.env.NODE_ENV === "serverport" ? process.env.SSL_CERT : "",
-      key: process.env.NODE_ENV === "serverport" ? process.env.SSL_KEY : "",
-      path: "/socket",
-      reconnection: true,
-      transports: ["websocket", "polling"],
-      reconnectionAttempts: 5,
+      cors: {
+        origin: "http://localhost:5000",
+        credentials: true,
+      },
+      transports: ["websocket"],
     });
 
     setName(nameFromUrl);
