@@ -15,7 +15,7 @@ const Chat = () => {
   const [users, setUsers] = useState("");
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
-  const ENDPOINT = process.env.server || "http://localhost:5000";
+  const ENDPOINT = "https://realtimechaatapp.onrender.com";
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
 
