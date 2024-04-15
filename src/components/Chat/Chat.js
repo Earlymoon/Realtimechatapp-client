@@ -16,14 +16,21 @@ const Chat = () => {
   const [users, setUsers] = useState("");
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
-  const ENDPOINT = process.env.SERVERPORT || "localhost:5000";
+  const ENDPOINT = process.env.SERVERPORT || "http://localhost:5000";
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
 
     const nameFromUrl = searchParams.get("name") || "";
     const roomFromUrl = searchParams.get("room") || "";
 
-    socket = io(ENDPOINT);
+    socket = io(ENDPOINT, {
+      cert: process.env.NODE_ENV === "serverport" ? process.env.SSL_CERT : "",
+      key: process.env.NODE_ENV === "serverport" ? process.env.SSL_KEY : "",
+      path: "/socket",
+      reconnection: true,
+      transports: ["websocket", "polling"],
+      reconnectionAttempts: 5,
+    });
 
     setName(nameFromUrl);
     setRoom(roomFromUrl);
