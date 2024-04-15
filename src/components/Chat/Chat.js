@@ -15,20 +15,14 @@ const Chat = () => {
   const [users, setUsers] = useState("");
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
-  const ENDPOINT = process.env.SERVERPORT || "http://localhost:5000";
+  const ENDPOINT = process.env.server || "http://localhost:5000";
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
 
     const nameFromUrl = searchParams.get("name") || "";
     const roomFromUrl = searchParams.get("room") || "";
 
-    socket = io(ENDPOINT, {
-      cors: {
-        origin: "http://localhost:5000",
-        credentials: true,
-      },
-      transports: ["websocket"],
-    });
+    socket = io(ENDPOINT, { transports: ["websocket"] });
 
     setName(nameFromUrl);
     setRoom(roomFromUrl);
