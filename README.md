@@ -1,3 +1,8 @@
+
+
+<img width="886" alt="chatApp" src="https://github.com/Earlymoon/Realtimechatapp-client/assets/117526318/8728963a-1b76-450d-8379-5ab13b7ee7d3">
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
